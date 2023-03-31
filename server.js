@@ -6,6 +6,7 @@ const Cors = require("cors");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/Auth");
+const todoRoutes = require("./routes/Todo");
 //app config
 const app = express();
 const port = 7000;
@@ -32,6 +33,7 @@ mongoose
     res.send("API is running");
   });
 app.use("/auth", authRoutes);
+app.use("/todo", todoRoutes);
 app.listen(port, () => {
   console.log(`listening in : ${port}`);
 });
